@@ -1,0 +1,48 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  /*overflow: hidden;*/
+}
+
+.App {
+  text-align: center;
+  position: relative;
+  min-height: 100vh;
+  height: 100%;
+  width: 0%;
+  /*overflow: hidden;*/
+}
+
+body {
+  background-color: #000;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+@font-face {
+  font-family: 'MS Sans Serif';
+  src: url('react95/dist/fonts/ms_sans_serif.woff') format('woff');
+}
+
+.ms-sans-serif {
+  font-family: 'MS Sans Serif', sans-serif;
+}
+body {
+  font-family: 'MS Sans Serif', sans-serif;
+}
+.bottom-image {
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  transform:translate(50%,0%) scale(5);
+  width: 100px;
+}

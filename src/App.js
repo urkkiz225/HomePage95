@@ -1,46 +1,25 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
-import { styleReset, Window, WindowHeader, WindowContent, Button, Toolbar } from 'react95';
-import { Computer, Folder, Notepad, Camera as Eye, Close } from '@react95/icons';
+import { styleReset } from 'react95';
 import original from 'react95/dist/themes/original';
+import modernDark from 'react95/dist/themes/redWine';
+import WindowComponent from './WindowComponent';
+import cat from './cat.png';
+import thePunishedOne from './thePunishedOne.png';
+import HELLTALE from './Helltale.png';
 import './App.css';
 
 function App() {
   return (
-    <ThemeProvider theme={original}>
-      <div className="App">
+    <ThemeProvider theme = {modernDark}>
+      <div className = "App">
         <style>{styleReset}</style>
-        <Window style={{ width: 300, margin: 'auto', marginTop: '50px' }}>
-          <WindowHeader>
-            <span>
-              <Computer style={{ marginRight: '8px' }} />
-              Main window
-            </span>
-            <Button style={{ float: 'right' }}>
-              <Close />
-            </Button>
-          </WindowHeader>
-          <Toolbar>
-            <Button variant="menu">
-              <Folder style={{ marginRight: '4px' }} />
-              File
-            </Button>
-            <Button variant="menu">
-              <Notepad style={{ marginRight: '4px' }} />
-              Edit
-            </Button>
-            <Button variant="menu">
-              <Eye style={{ marginRight: '4px' }} />
-              View
-            </Button>
-          </Toolbar>
-          <WindowContent>
-            <p>
-              <Computer style={{ marginRight: '8px' }} />
-              Does this shit even work?
-            </p>
-          </WindowContent>
-        </Window>
+        <WindowComponent title="Home window" content=":3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3\n:3 :3 :3 :3 :3 :3 :3:3 :3 :3 :3 :3 :3 :3" width='500' height='300' />
+        <WindowComponent title="1984" content = "No blender allowed. No violence allowed. Robots are to be validated." />
+        <WindowComponent title="ABG!" content = "Analbugs: with you since win95!" />
+        <img src={cat} alt="Cat" className = "bottom-image" />
+        <img src={thePunishedOne} alt = "The Punished One" className="Azazel" />
+        <img src={HELLTALE} alt = "The Punished One" className="Helltale" />
       </div>
     </ThemeProvider>
   );

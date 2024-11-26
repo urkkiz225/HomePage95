@@ -1,18 +1,34 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Draggable from 'react-draggable';
 import { Window, WindowHeader, WindowContent, Button, Toolbar } from 'react95';
 import { Computer, Folder, Notepad, Camera as Eye, Close } from '@react95/icons';
 
-const WindowComponent = ({ title, content, width, height}) => {
+const WindowComponent = ({ title, content, width, height }) => {
+  const [defaultPosition, setDefaultPosition] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const handleResize = () => {
+      const newX = window.innerWidth < 800 ? window.innerWidth * 0.2 : defaultPosition.x;
+      const newY = window.innerHeight < 600 ? window.innerHeight * 0.2 : defaultPosition.y;
+      setDefaultPosition({ x: newX, y: newY });
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize();
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [defaultPosition.x, defaultPosition.y]);
+
   return (
-    <Draggable handle=".window-header">
+    <Draggable handle=".window-header" defaultPosition={defaultPosition}>
       <div>
+        <span className="ms-sans-serif">
         <Window style={{ width: width, height: height, margin: 'auto', marginTop: 200 }}>
-            <span className="ms-sans-serif">
           <WindowHeader className="window-header">
               <Computer style={{ marginRight: '8px' }} />
               {title}
-
             <Button style={{ float: 'right' }}>
               <Close />
             </Button>
@@ -34,8 +50,8 @@ const WindowComponent = ({ title, content, width, height}) => {
           <WindowContent>
             <p>{content}</p>
           </WindowContent>
-          </span>
         </Window>
+        </span>
       </div>
     </Draggable>
   );

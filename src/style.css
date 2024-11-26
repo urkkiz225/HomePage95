@@ -1,7 +1,8 @@
 html, body {
   height: 100%;
   margin: 0;
-  /*overflow: hidden;*/
+  overflow-x: hidden; /* Hide horizontal scrollbars */
+  overflow-y: auto;   /* Allow vertical scrollbars */
 }
 
 .App {
@@ -9,8 +10,9 @@ html, body {
   position: relative;
   min-height: 100vh;
   height: 100%;
-  width: 0%;
-  /*overflow: hidden;*/
+  width: 100%;
+  overflow-x: hidden; /* Hide horizontal scrollbars */
+  overflow-y: auto;   /* Allow vertical scrollbars */
 }
 
 body {
@@ -36,13 +38,7 @@ body {
 .ms-sans-serif {
   font-family: 'MS Sans Serif', sans-serif;
 }
+
 body {
   font-family: 'MS Sans Serif', sans-serif;
-}
-.bottom-image {
-  position: absolute;
-  bottom: 0%;
-  left: 50%;
-  transform:translate(50%,0%) scale(5);
-  width: 100px;
 }

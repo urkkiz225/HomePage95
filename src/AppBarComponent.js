@@ -3,7 +3,7 @@ import { AppBar, Toolbar, Button, TextInput } from 'react95';
 
 const AppBarComponent = () => {
   return (
-    <AppBar style={{ position: 'fixed', top: 0, left: 0, right: 0, height : 100 }}>
+    <AppBar style={{ position: 'absolute', top: 0, left: 0, right: 0, height : 100}}>
       <Toolbar style={{ justifyContent: 'space-between' }}>
         <span className="ms-sans-serif">
         <div style={{ display: 'flex', alignItems: 'center' }}>

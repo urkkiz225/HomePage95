@@ -12,7 +12,7 @@ html, body {
   height: 100%;
   width: 100%;
   overflow-x: hidden; /* Hide horizontal scrollbars */
-  overflow-y: auto;   /* Allow vertical scrollbars */
+  overflow-y: hidden;   /* Allow vertical scrollbars */
 }
 
 body {
@@ -41,4 +41,18 @@ body {
 
 body {
   font-family: 'MS Sans Serif', sans-serif;
+}
+.bottom-image {
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  transform:translate(50%,0%) scale(5);
+  width: 100px;
+}
+.center-image {
+  position: absolute;
+  bottom: 0%;
+  left: 10%;
+  transform:scale(2);
+  width: 100px;
 }

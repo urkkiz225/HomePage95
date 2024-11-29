@@ -3,7 +3,7 @@ import Draggable from 'react-draggable';
 import { Window, WindowHeader, WindowContent, Button, Toolbar } from 'react95';
 import { Computer, Folder, Notepad, Camera as Eye, Close } from '@react95/icons';
 
-const WindowComponent = ({ title, content, width, height, position }) => {
+const WindowComponent = ({ title, content, width, height, img, alt }) => {
   const [defaultPosition, setDefaultPosition] = useState({ x: 0, y: 0 });
   useEffect(() => {
     const handleResize = () => {
@@ -17,13 +17,14 @@ const WindowComponent = ({ title, content, width, height, position }) => {
       window.removeEventListener('resize', handleResize);
     };
   }, [defaultPosition.x, defaultPosition.y]);
+
   return (
     <Draggable handle=".window-header" defaultPosition={defaultPosition}>
       <div>
         <span className="ms-sans-serif">
         <Window style={{ width: width, height: height, margin: 'auto', marginTop: 200 }}>
           <WindowHeader className="window-header">
-              <Computer style={{ marginRight: '8px', marginInline: '5px'}}/>
+              <Computer style={{ marginRight: '8px' }} />
               {title}
             <Button style={{ float: 'right' }}>
               <Close />
@@ -45,6 +46,7 @@ const WindowComponent = ({ title, content, width, height, position }) => {
           </Toolbar>
           <WindowContent>
             <p>{content}</p>
+            <img src={img} alt='alt' width = {100} height = {100}/>
           </WindowContent>
         </Window>
         </span>

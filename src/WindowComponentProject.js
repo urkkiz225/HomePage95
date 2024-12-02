@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import Draggable from 'react-draggable';
 import { Window, WindowHeader, WindowContent, Button, Toolbar } from 'react95';
-import { Computer, Folder, Notepad, Camera as Eye, Close } from '@react95/icons';
+import {Computer} from '@react95/icons';
 
-const WindowComponentImage = ({ title, content, img, icon, width, height, imgWidth, imgHeight, imgScale, posX, posY }) => {
+const WindowComponentProject = ({ title, content, contentSide, img, icon, width, height, imgWidth, imgHeight, imgScale, posX, posY, githubLink }) => {
   const [defaultPosition, setDefaultPosition] = useState({ x: posX, y: posY });
 
   useEffect(() => {
@@ -20,6 +20,10 @@ const WindowComponentImage = ({ title, content, img, icon, width, height, imgWid
       window.removeEventListener('resize', handleResize);
     };
   }, [defaultPosition.x, defaultPosition.y]);
+  
+  const openLink = () => {
+    window.open(githubLink, '_blank' /*consider 404 page instead of _blank.*/ );
+  };
 
   return (
     <Draggable handle=".window-header" defaultPosition={defaultPosition}>
@@ -33,28 +37,10 @@ const WindowComponentImage = ({ title, content, img, icon, width, height, imgWid
                   <Computer style={{ marginRight: '8px' }} />
                 )}
                 {title}
-              <Button style={{ float: 'right' }}>
-                <Close />
-              </Button>
             </WindowHeader>
-            <Toolbar>
-              <Button variant="menu">
-                <Folder style={{ marginRight: '4px' }} />
-                File
-              </Button>
-              <Button variant="menu">
-                <Notepad style={{ marginRight: '4px' }} />
-                Edit
-              </Button>
-              <Button variant="menu">
-                <Eye style={{ marginRight: '4px' }} />
-                View
-              </Button>
-            </Toolbar>
             <WindowContent style={{ display: 'flex', flexDirection: 'column', padding: '10px', overflow: 'hidden' }}>
               <div style={{ flex: '1 1 auto', overflow: 'auto', width: '100%' }}>
-                <p>{content}</p>
-                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%' }}>
+                <div style={{ display: 'flex', justifyContent: "space-evenly", alignItems: 'center', width: '100%'}}>
                   <img
                     src={img}
                     alt="alt"
@@ -63,10 +49,15 @@ const WindowComponentImage = ({ title, content, img, icon, width, height, imgWid
                       height: imgHeight,
                       transform: `scale(${imgScale})`,
                       display: 'block',
-                      margin: '10px 0'
+                      margin: '20px 0'
                     }}
                   />
+                  {<p>{contentSide}</p>}
                 </div>
+                <p>{content}</p>
+                <Button variant = "github" size = 'md' padding = '20px' onClick = {openLink}>
+                  Project Github
+                </Button>
               </div>
             </WindowContent>
           </Window>
@@ -76,4 +67,4 @@ const WindowComponentImage = ({ title, content, img, icon, width, height, imgWid
   );
 };
 
-export default WindowComponentImage;
+export default WindowComponentProject;

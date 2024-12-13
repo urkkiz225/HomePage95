@@ -12,29 +12,28 @@ import cat from './cat.png';
 import WoodBoards from './WoodBoards.png';
 import webamp from 'webamp';
 
-
 function App() {
   return (
     <ThemeProvider theme={modernDark}>
-      <div className="App" id = "App">
+      <div className="App" id="App">
         <style>{styleReset}</style>
-          <div style={{ paddingTop: '50px' }}>
-            <WindowComponentDescription
-                title = "About me"
-                content = "real"
-                posX= {20}
-                posY = {20}
-                height = {200}
-            WindowComponentDescription/>
-            <img src = {cat} alt = 'cat' className = "center-image" />
-          </div>
-        <AppBarComponent/>
+        <div style={{ paddingTop: '50px' }}>
+          <WindowComponentDescription
+            title="About me"
+            content="real"
+            posX={20}
+            posY={20}
+            height={200}
+          />
+          <img src={cat} alt='cat' className="center-image" />
+        </div>
+        <AppBarComponent />
       </div>
       <script src="https://unpkg.com/webamp">
-      <script>
+        <script>
           const webamp = new Webamp();
           webamp.renderWhenReady(App);
-      </script>
+        </script>
       </script>
     </ThemeProvider>
   );

@@ -27,7 +27,7 @@ body {
   cursor: pointer;
 }
 
-.clear-button img {
+.clear-button {
   display: block;
 }
 
@@ -76,8 +76,22 @@ body {
 .top-image {
   image-rendering:pixelated;
   position: absolute;
-  top: 22.5%;
-  left: 55%;
-  transform: scale(5.5);
+  top: 36.5%;
+  left: 50%;
+  transform: scale(2.5);
   width: 100px;
+}
+
+.header-image {
+  max-width: 250px;
+  width: 100%;
+  height: auto;
+  image-rendering: pixelated;
+}
+
+.clear-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
 }

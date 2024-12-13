@@ -28,7 +28,7 @@ const WindowComponentImage = ({ title, content, img, icon, width, height, imgWid
           <Window style={{ width: width, height: height, margin: 'auto', marginTop: 200 }}>
             <WindowHeader className="window-header">
                 {icon ? (
-                  <img src={icon} alt="icon" style={{ marginRight: '8px', width: '16px', height: '16px' }} />
+                  <img src={icon} alt="icon" className='img' style={{ marginRight: '8px', width: '16px', height: '16px'}} />
                 ) : (
                   <Computer style={{ marginRight: '8px' }} />
                 )}

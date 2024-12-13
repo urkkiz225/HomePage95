@@ -3,7 +3,7 @@ import Draggable from 'react-draggable';
 import { Window, WindowHeader, WindowContent, Button, Toolbar } from 'react95';
 import { Folder, Notepad, Camera as Eye, Close } from '@react95/icons';
 
-const WindowComponent = ({ title, content, width, height, posX, posY, icon }) => {
+const WindowComponentDescription = ({ title, content, width, height, posX, posY, icon }) => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
@@ -43,20 +43,6 @@ const WindowComponent = ({ title, content, width, height, posX, posY, icon }) =>
                 <Close />
               </Button>
             </WindowHeader>
-            <Toolbar>
-              <Button variant="menu">
-                <Folder style={{ marginRight: '4px' }} />
-                File
-              </Button>
-              <Button variant="menu">
-                <Notepad style={{ marginRight: '4px' }} />
-                Edit
-              </Button>
-              <Button variant="menu">
-                <Eye style={{ marginRight: '4px' }} />
-                View
-              </Button>
-            </Toolbar>
             <WindowContent>
               <p>{content}</p>
             </WindowContent>
@@ -67,4 +53,4 @@ const WindowComponent = ({ title, content, width, height, posX, posY, icon }) =>
   );
 };
 
-export default WindowComponent;
+export default WindowComponentDescription;

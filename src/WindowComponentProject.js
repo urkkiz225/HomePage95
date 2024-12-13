@@ -27,9 +27,9 @@ const WindowComponentProject = ({ title, content, contentSide, img, icon, width,
 
   return (
     <Draggable handle=".window-header" defaultPosition={defaultPosition}>
-      <div>
+      <div style = {{overflow:'hidden'}}>
         <span className="ms-sans-serif">
-          <Window style={{ width: width, height: height, margin: 'auto', marginTop: 200 }}>
+          <Window style={{ width: width, height: height, margin: 'auto', marginTop: 200, overflow: 'hidden'}}>
             <WindowHeader className="window-header">
                 {icon ? (
                   <img src={icon} alt="icon" style={{ marginRight: '8px', width: '16px', height: '16px' }} />
@@ -54,8 +54,8 @@ const WindowComponentProject = ({ title, content, contentSide, img, icon, width,
                   />
                   {<p>{contentSide}</p>}
                 </div>
-                <p>{content}</p>
-                <Button variant = "github" size = 'md' padding = '20px' onClick = {openLink}>
+                <p style = {{overflow: 'hidden'}}>{content}</p>
+                <Button variant = "github" size = 'md' padding = '20px' style = {{overflow: 'hidden'}} onClick = {openLink}>
                   Project Github
                 </Button>
               </div>

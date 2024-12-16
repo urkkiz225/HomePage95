@@ -1,20 +1,45 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Header from './Header.png';
 import GitHubLogo256x256 from './GH-logo256x256.png';
 import { AppBar, Toolbar, Button, TextInput } from 'react95';
-import { IoColorFill } from 'react-icons/io5';
 
 const AppBarComponent = () => {
+  const [hideHeader, setHideHeader] = useState(false);
+  const headerRef = useRef(null);
+  const navbarRef = useRef(null);
+
+  useEffect(() => {
+    const checkOverlap = () => {
+      if (headerRef.current && navbarRef.current) {
+        const headerRect = headerRef.current.getBoundingClientRect();
+        const navbarRect = navbarRef.current.getBoundingClientRect();
+        const isOverlap = headerRect.left < navbarRect.right + 10; // Adjust margin as needed
+        setHideHeader(isOverlap);
+      }
+    };
+
+    window.addEventListener('resize', checkOverlap);
+    checkOverlap();
+
+    return () => {
+      window.removeEventListener('resize', checkOverlap);
+    };
+  }, []);
+
   const openLink = (link) => {
     window.open(link, '_blank');
   };
 
+  const redirectTo = (path) => {
+    window.location.href = path;
+  };
+
   return (
-    <AppBar style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 110,display: 'flex' }}>
-      <Toolbar style={{ justifyContent: 'space-between',display:'flow', top: '10%' }}>
-        <span className="ms-sans-serif">
-          <div style={{ display: 'flex', top: '50%'}}>
-            <Button variant="menu" size="sm" style={{ fontWeight: 'bold'}}>
+    <AppBar style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 110 }}>
+      <span className="ms-sans-serif">
+        <Toolbar style={{ justifyContent: 'space-between', display: 'flex', alignItems: 'center', top: '20%' }}>
+          <div ref={navbarRef} style={{ display: 'flex', alignItems: 'center' }}>
+            <Button variant="menu" size="sm" style={{ fontWeight: 'bold' }}>
               Start
             </Button>
             <TextInput
@@ -22,22 +47,30 @@ const AppBarComponent = () => {
               width={150}
               style={{ marginLeft: 4 }}
             />
-            <Button variant = "Main page" size = 'md' padding = '20px' style = {{overflow: 'hidden', marginLeft: '5px'}} onClick = {openLink}>
-              Main page
+            <Button variant="menu" size="sm" style={{ marginLeft: 4 }} onClick={() => redirectTo('/main')}>
+              Main Page
             </Button>
-            <img src={Header} alt="Header" className='top-image' />
+            <Button variant="menu" size="sm" style={{ marginLeft: 4 }} onClick={() => redirectTo('/portfolio')}>
+              Portfolio
+            </Button>
+            <Button variant="menu" size="sm" style={{ marginLeft: 4 }} onClick={() => redirectTo('/gallery')}>
+              Gallery
+            </Button>
           </div>
-        </span>
-        <div buttons style={{ display: 'flex', position: 'absolute', top: '50%', left: '93%'}}>
-          {
-            <button onClick={() => openLink("https://github.com/urkkiz225")} className="clear-button">
-              <img src={GitHubLogo256x256} alt="GitHub" style={{ width: 40, height: 40, imageRendering: 'pixelated', filter: IoColorFill(244,0,224)}} />
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            {!hideHeader && (
+              <img src={Header} alt="Header" className="top-image" ref={headerRef} />
+            )}
+            <button onClick={() => openLink('https://github.com/urkkiz225')} className="clear-button" style={{ marginLeft: '10px' }}>
+              <img
+                src={GitHubLogo256x256}
+                alt="GitHub"
+                style={{ width: 40, height: 40, imageRendering: 'pixelated' }}
+              />
             </button>
-          }
-          
-        </div>
-
-      </Toolbar>
+          </div>
+        </Toolbar>
+      </span>
     </AppBar>
   );
 };

@@ -1,40 +1,29 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import { styleReset } from 'react95';
 import modernDark from 'react95/dist/themes/redWine';
-import WindowComponent from './WindowComponent';
-import WindowComponentImage from './WindowComponentImage';
 import AppBarComponent from './AppBarComponent';
-import WindowComponentProject from './WindowComponentProject';
-import WindowComponentDescription from './WindowComponentDescription';
+import MainPage from './MainPage';
+import PortfolioPage from './PortfolioPage';
+import GalleryPage from './GalleryPage';
 import './style.css';
-import cat from './cat.png';
-import WoodBoards from './WoodBoards.png';
-import webamp from 'webamp';
 
 function App() {
   return (
     <ThemeProvider theme={modernDark}>
-      <div className="App" id="App">
-        <style>{styleReset}</style>
-        <div style={{ paddingTop: '50px' }}>
-          <WindowComponentDescription
-            title="About me"
-            content="real"
-            posX={20}
-            posY={20}
-            height={200}
-          />
-          <img src={cat} alt='cat' className="center-image" />
+      <Router>
+        <div className="App" id="App">
+          <style>{styleReset}</style>
+          <AppBarComponent />
+          <Routes>
+            <Route path="/main" element={<MainPage />} />
+            <Route path="/portfolio" element={<PortfolioPage />} />
+            <Route path="/gallery" element={<GalleryPage />} />
+            <Route path="/" element={<MainPage />} />
+          </Routes>
         </div>
-        <AppBarComponent />
-      </div>
-      <script src="https://unpkg.com/webamp">
-        <script>
-          const webamp = new Webamp();
-          webamp.renderWhenReady(App);
-        </script>
-      </script>
+      </Router>
     </ThemeProvider>
   );
 }

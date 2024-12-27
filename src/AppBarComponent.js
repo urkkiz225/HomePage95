@@ -35,9 +35,9 @@ const AppBarComponent = () => {
   };
 
   return (
-    <AppBar style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 110 }}>
+    <AppBar style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 100 }}>
       <span className="ms-sans-serif">
-        <Toolbar style={{ justifyContent: 'space-between', display: 'flex', alignItems: 'center', top: '20%' }}>
+        <Toolbar style={{ justifyContent: 'space-between', display: 'flex', alignItems: 'center', top: '20%', position: '20%' }}>
           <div ref={navbarRef} style={{ display: 'flex', alignItems: 'center' }}>
             <Button variant="menu" size="sm" style={{ fontWeight: 'bold' }}>
               Start
@@ -61,7 +61,7 @@ const AppBarComponent = () => {
             {!hideHeader && (
               <img src={Header} alt="Header" className="top-image" ref={headerRef} />
             )}
-            <button onClick={() => openLink('https://github.com/urkkiz225')} className="clear-button" style={{ marginLeft: '10px' }}>
+            <button onClick={() => openLink('https://github.com/urkkiz225')} className="clear-button" style={{ marginRight: '10px', top: '50%' }}>
               <img
                 src={GitHubLogo256x256}
                 alt="GitHub"

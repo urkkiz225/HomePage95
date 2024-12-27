@@ -43,20 +43,6 @@ const WindowComponent = ({ title, content, width, height, posX, posY, icon }) =>
                 <Close />
               </Button>
             </WindowHeader>
-            <Toolbar>
-              <Button variant="menu">
-                <Folder style={{ marginRight: '4px' }} />
-                File
-              </Button>
-              <Button variant="menu">
-                <Notepad style={{ marginRight: '4px' }} />
-                Edit
-              </Button>
-              <Button variant="menu">
-                <Eye style={{ marginRight: '4px' }} />
-                View
-              </Button>
-            </Toolbar>
             <WindowContent>
               <p>{content}</p>
             </WindowContent>

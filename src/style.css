@@ -95,3 +95,7 @@ body {
   padding: 0;
   cursor: pointer;
 }
+
+.text-right {
+  text-align: center;
+}

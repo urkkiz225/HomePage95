@@ -11,7 +11,6 @@ const MainPage = () => {
     return (
         <ThemeProvider theme={modernDark}>
           <div className="App" id="App">
-            <style>{styleReset}</style>
             <div style={{ paddingTop: '50px' }}>
               <WindowComponentDescription
                 title="About me"

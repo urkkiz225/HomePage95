@@ -36,7 +36,7 @@ const WindowComponentDescription = ({ title, content, width, height, posX, posY,
           <Window style={{ width: width || 300, height: height || 200 }}>
             <WindowHeader>
               <span>
-                {icon && <img src={icon} alt="icon" style={{ marginRight: '8px' }} />}
+                {icon && <img src = {icon} alt="icon" style={{ marginRight: '8px' }} />}
                 {title}
               </span>
               <Button style={{ float: 'right' }}>

@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import { styleReset } from 'react95';
-import modernDark from 'react95/dist/themes/redWine';
+import modernDark from 'react95/dist/themes/modernDark';
 import AppBarComponent from './AppBarComponent';
 import MainPage from './MainPage';
 import PortfolioPage from './PortfolioPage';

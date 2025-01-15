@@ -13,8 +13,6 @@ html, body {
   min-height: 100vh;
   height: 100%;
   width: 100%;
-  overflow-x: hidden;
-  overflow-y: hidden;
 }
 
 body {
@@ -79,6 +77,15 @@ body {
   top: 36.5%;
   left: 50%;
   transform: scale(2.5);
+  width: 100px;
+}
+
+.cat {
+  image-rendering: pixelated;
+  position:absolute;
+  bottom: -100%;
+  left: 5%;
+  transform: scale(2);
   width: 100px;
 }
 

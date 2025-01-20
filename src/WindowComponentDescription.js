@@ -32,7 +32,7 @@ const WindowComponentDescription = ({ title, content, width, height, posX, posY,
   return (
     <span className='ms-sans-serif'>
       <Draggable position={position} onDrag={handleDrag}>
-        <div style={{ position: 'absolute' }}>
+        <div style={{ position: 'relative' }}>
           <Window style={{ width: width || 300, height: height || 200 }}>
             <WindowHeader>
               <span>

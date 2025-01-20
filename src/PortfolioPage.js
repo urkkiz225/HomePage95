@@ -17,22 +17,15 @@ const PortfolioPage = () => {
   return (
     
     <ThemeProvider theme={redWine}>
-        <div style={{ paddingTop: '50px' }}>
-          <WindowComponentDescription
-                title="About me"
-                content="real"
-                posX={0}
-                posY={0}
-                height={200}
-                width = {400}
-              />
+        <div style={{ paddingTop: '120px' }}>
+
           <WindowComponentProject
             title = "Brutalmania"
             content = "THIS! IS! BRUTALMANIA!!!"
             contentSide = "HAIL BRUTE! Welcome to Brutalmania! AN endless fight for life, gold and splendor at the bloody arena. Show your enemies your strength and ruhtlessness. Have no mercy! Dare to reach for power! Collect gold, improve yourself and your gear, fight again and again!"
             width = {500}
             height = {500}
-            posX = {0}
+            posX = {10}
             posY = {0}
             img = {BRUTALMANIA}
             imgWidth={320}
@@ -45,8 +38,8 @@ const PortfolioPage = () => {
             contentSideRight = "A certified Finnish summer experience - down to the finite details. A passion project for a while - before the inevitablility of it all pushed towards new winds."
             width = {530}
             height = {420}
-            posX = {20}
-            posY = {25}
+            posX = {50}
+            posY = {70}
             img = {Kesasim}
             imgwidth = {320}
             imgHeight={180}
@@ -55,16 +48,16 @@ const PortfolioPage = () => {
             <WindowComponentProject
             title = "Journey"
             contentSideLeft = "An old horror game-esque high-fidelity audiovisual demo - key points are sound and environment design."
-            content = "Made utilizing HDRP and shit man idk"
+            content = "Made utilizing HDRP and the Unity game engine."
             width = {500}
             height = {380}
-            posX = {20}
-            posY = {15}
+            posX = {5}
+            posY = {95}
             img = {Journey}
             imgwidth = {320}
             imgHeight={180}
-            githubLink={"https://guncommunity.co.za/listing/african-guns-ammo-2/"}
-            alternativeButtonText={"Those who mow button ---->>>>"}
+            githubLink={"https://github.com/urkkiz225/Journey"}
+            alternativeButtonText={"Project Github"}
             WindowComponentProject/>
           </div>
           <img src={cat} alt='cat' className="cat"/>

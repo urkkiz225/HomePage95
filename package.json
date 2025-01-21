@@ -1,7 +1,7 @@
 {
   "name": "homepage95",
   "version": "0.1.4",
-  "homepage": "https://urkkiz225.github.io/Home95Page",
+  "homepage": "https://urkkiz225.github.io/HomePage95",
   "private": true,
   "dependencies": {
     "@react95/core": "^9.2.0",

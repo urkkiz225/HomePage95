@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import Header from './Header.png';
 import GitHubLogo256x256 from './GH-logo256x256.png';
 import { AppBar, Toolbar, Button, TextInput } from 'react95';
+import { useNavigate } from 'react-router-dom';
+
 
 const AppBarComponent = () => {
   const [hideHeader, setHideHeader] = useState(false);
@@ -13,7 +15,7 @@ const AppBarComponent = () => {
       if (headerRef.current && navbarRef.current) {
         const headerRect = headerRef.current.getBoundingClientRect();
         const navbarRect = navbarRef.current.getBoundingClientRect();
-        const isOverlap = headerRect.left < navbarRect.right + 10; // Adjust margin as needed
+        const isOverlap = headerRect.left < navbarRect.right + 10;
         setHideHeader(isOverlap);
       }
     };
@@ -30,8 +32,10 @@ const AppBarComponent = () => {
     window.open(link, '_blank');
   };
 
+  const navigate = useNavigate();
+
   const redirectTo = (path) => {
-    window.location.href = path;
+    navigate(path);
   };
 
   return (
@@ -39,13 +43,13 @@ const AppBarComponent = () => {
       <span className="ms-sans-serif">
         <Toolbar style={{ justifyContent: 'space-between', display: 'flex', alignItems: 'center', top: '20%', position: '20%' }}>
           <div ref={navbarRef} style={{ display: 'flex', alignItems: 'center' }}>
-            <Button variant="menu" size="sm" style={{ fontWeight: 'bold' }}>
+            <Button variant="menu" size="sm" style={{ fontWeight: 'bold' }} onClick={() => redirectTo('/main')}>
               Start
             </Button>
             <TextInput
               placeholder="Search..."
               width={150}
-              style={{ marginLeft: 4 }}
+              style={{ marginLeft: 4}}
             />
             <Button variant="menu" size="sm" style={{ marginLeft: 4 }} onClick={() => redirectTo('/main')}>
               Main Page

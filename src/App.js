@@ -17,10 +17,10 @@ function App() {
           <style>{styleReset}</style>
           <AppBarComponent />
           <Routes>
-            <Route path="/main" element={<MainPage />} />
-            <Route path="/portfolio" element={<PortfolioPage />} />
-            <Route path="/gallery" element={<GalleryPage />} />
-            <Route path="/" element={<MainPage />} />
+            <Route path="HomePage95/main" element={<MainPage />} />
+            <Route path="HomePage95/portfolio" element={<PortfolioPage />} />
+            <Route path="HomePage95/gallery" element={<GalleryPage />} />
+            <Route path="HomePage95/" element={<MainPage />} />
           </Routes>
         </div>
       </Router>

@@ -1,0 +1,108 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  image-rendering: pixelated;
+}
+
+.App {
+  image-rendering:pixelated;
+  text-align: center;
+  position: relative;
+  min-height: 100vh;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-color: #000;
+}
+.clear-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.clear-button {
+  display: block;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+@font-face {
+  font-family: 'MS Sans Serif';
+  src: url('react95/dist/fonts/ms_sans_serif.woff') format('woff');
+}
+
+.ms-sans-serif {
+  font-family: 'MS Sans Serif', sans-serif;
+}
+
+body {
+  font-family: 'MS Sans Serif', sans-serif;
+}
+
+.bottom-image {
+  image-rendering:pixelated;
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  transform: translate(50%, 0%) scale(5);
+  width: 100px;
+}
+
+.center-image {
+  image-rendering:pixelated;
+  position: absolute;
+  bottom: 0%;
+  left: 10%;
+  transform: scale(2);
+  width: 100px;
+}
+
+.top-image {
+  image-rendering:pixelated;
+  position: absolute;
+  top: 36.5%;
+  left: 50%;
+  transform: scale(2.5);
+  width: 100px;
+}
+
+.cat {
+  image-rendering: pixelated;
+  position:absolute;
+  bottom: -100%;
+  left: 5%;
+  transform: scale(2);
+  width: 100px;
+}
+
+.header-image {
+  max-width: 250px;
+  width: 100%;
+  height: auto;
+  image-rendering: pixelated;
+}
+
+.clear-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.text-right {
+  text-align: center;
+}

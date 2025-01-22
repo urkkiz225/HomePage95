@@ -27,6 +27,8 @@ const WindowComponentProject = ({ title, content, contentSideLeft, contentSideRi
 
   const handleDrag = (e, data) => {
     setPosition({ x: data.x, y: data.y });
+    console.log(`pos: ${data.x}, ${data.y}`);
+
   };
 
   const openLink = () => {
@@ -49,7 +51,7 @@ const WindowComponentProject = ({ title, content, contentSideLeft, contentSideRi
               <WindowContent style={{ display: 'flex', flexDirection: 'column', flex: '1 1 auto', overflow: 'auto' }}>
                 <div style={{ flex: '1 1 auto', overflow: 'auto', width: '100%' }}>
                   <div style={{ display: 'flex', justifyContent: 'center', flex: '1 1 auto', overflow: 'auto', alignItems: 'center', width: '95%', marginLeft: '10px', marginRight : '10px'}}>
-                    {<p>{contentSideLeft}</p>}
+                    {<p style = {{marginRight: '10px'}} >{contentSideLeft}</p>}
                     <img
                       src={img}
                       alt="alt"
@@ -58,10 +60,11 @@ const WindowComponentProject = ({ title, content, contentSideLeft, contentSideRi
                         height: imgHeight,
                         transform: `scale(${imgScale})`,
                         display: 'block',
-                        margin: '20px 0'
+                        margin: '15px 0',
+                        border: '2px solid white' 
                       }}
                     />
-                    {<p style = {{marginLeft: '5px'}}>{contentSideRight}</p>}
+                    {<p style = {{marginLeft: '10px'}}>{contentSideRight}</p>}
                   </div>
                   <p style = {{marginLeft: '5px'}}>{content}</p>
                   <Button variant = "github" size = 'md' padding = '20px' style = {{overflow: 'hidden', marginTop: '10px'}} onClick = {openLink}>

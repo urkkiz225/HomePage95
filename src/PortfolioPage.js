@@ -1,67 +1,83 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { ThemeProvider } from 'styled-components';
-import { styleReset } from 'react95';
-import modernDark from 'react95/dist/themes/modernDark';
 import redWine from 'react95/dist/themes/redWine';
 import AppBarComponent from './AppBarComponent';
-import WindowComponentDescription from './WindowComponentDescription';
 import WindowComponentProject from './WindowComponentProject';
 import './style.css';
 import cat from './cat.png';
 import Kesasim from './ProjectHeaders/Kesasim.png';
-import BRUTALMANIA from './ProjectHeaders/BRUTALMANIA.jpg';
 import Journey from './ProjectHeaders/Journey.png';
-import WindowComponent from './WindowComponent';
+import ChickenWare from './ProjectHeaders/ChickenWare.png';
 
 const PortfolioPage = () => {
-  return (
-    
-    <ThemeProvider theme={redWine}>
-        <div style={{ paddingTop: '120px' }}>
+  const [isMobile, setIsMobile] = useState(false);
 
-          <WindowComponentProject
-            title = "Brutalmania"
-            content = "THIS! IS! BRUTALMANIA!!!"
-            contentSide = "HAIL BRUTE! Welcome to Brutalmania! AN endless fight for life, gold and splendor at the bloody arena. Show your enemies your strength and ruhtlessness. Have no mercy! Dare to reach for power! Collect gold, improve yourself and your gear, fight again and again!"
-            width = {500}
-            height = {500}
-            posX = {10}
-            posY = {0}
-            img = {BRUTALMANIA}
-            imgWidth={320}
-            imgHeight={280}
-            githubLink={"https://brutalmania.io/?v=1.2.63"}
-          />
-          <WindowComponentProject
-            title = "Kesäsimulaattori"
-            content = "An ages old project, made in Unity 2020.1.1f1, HDRP utilized and C# typed all the way through. Contains light shaderwork in the mix."
-            contentSideRight = "A certified Finnish summer experience - down to the finite details. A passion project for a while - before the inevitablility of it all pushed towards new winds."
-            width = {530}
-            height = {420}
-            posX = {50}
-            posY = {70}
-            img = {Kesasim}
-            imgwidth = {320}
-            imgHeight={180}
-            githubLink={"https://github.com/urkkiz225/kesasimulaattori"}
-            WindowComponentProject/>
+  useEffect(() => {
+    const checkMobile = () => {
+      const isNarrowScreen = window.matchMedia('(max-width: 1000px)').matches;
+      const isMobileDevice = /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      setIsMobile(isNarrowScreen || isMobileDevice);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+
+    return () => {
+      window.removeEventListener('resize', checkMobile);
+    };
+  }, []);
+  return (
+    <ThemeProvider theme={redWine}>
+      <span className="ms-sans-serif">
+        <div style={{ paddingTop: '130px' }}>
+          <h1 style = {{color: 'white', transform: `scale(${1.1})`, textWrap:'pretty', textAlign: 'center', paddingLeft: '50px', paddingRight: '50px'}}>This is my portfolio page is for my code projects only! For other dabblings and witchcrafts - like art and music, refer to <a href="/gallery" style={{ color: 'red' }}>Gallery</a>.</h1>
             <WindowComponentProject
-            title = "Journey"
-            contentSideLeft = "An old horror game-esque high-fidelity audiovisual demo - key points are sound and environment design."
-            content = "Made utilizing HDRP and the Unity game engine."
-            width = {500}
-            height = {380}
-            posX = {5}
-            posY = {95}
-            img = {Journey}
-            imgwidth = {320}
-            imgHeight={180}
-            githubLink={"https://github.com/urkkiz225/Journey"}
-            alternativeButtonText={"Project Github"}
-            WindowComponentProject/>
-          </div>
-          <img src={cat} alt='cat' className="cat"/>
-        <AppBarComponent />
+                title = "Kesäsimulaattori"
+                content = "An ages old project, made in Unity 2020.1.1f1, HDRP utilized and C# typed all the way through. Contains light shaderwork in the mix, like compute gerstner wave shaders."
+                contentSideRight = "A certified Finnish summer experience - down to the finite details. A passion project for a while - before the inevitablility of it all pushed towards new winds. Release on GitHub is outdated."
+                width = {600}
+                height = {420}
+                {
+                  ...isMobile? {posX: '5', mainScale: '0.75' } : { posX: 14, posY: 8, mainScale: '1' }
+                }
+                img = {Kesasim}
+                imgwidth = {320}
+                imgHeight={180}
+                githubLink={"https://github.com/urkkiz225/kesasimulaattori"}
+              WindowComponentProject/>
+              <WindowComponentProject
+                title = "Journey"
+                contentSideLeft = "An old horror game-esque high-fidelity audiovisual demo - key points are sound and environment design."
+                content = "Made utilizing HDRP and the Unity game engine."
+                width = {525}
+                height = {380}
+                {
+                  ...isMobile? {posX: '5', posY: '90', mainScale: '0.75'} : { posX: 50, posY: 81, mainScale: '1'  }
+                }
+                img = {Journey}
+                imgwidth = {320}
+                imgHeight={180}
+                githubLink={"https://github.com/urkkiz225/Journey"}
+                alternativeButtonText={"Project Github"}
+              WindowComponentProject/>
+              <WindowComponentProject
+                title = "ChickenWare"
+                content = "Written in Java, heavily utilizing the Minecraft source code. Programmed in 2020-2021."
+                contentSideRight = "A Minecraft base game utility client modification - allows for gamescapes otherwise entirely impossible."
+                width = {480}
+                height = {410}
+                {
+                  ...isMobile? {posX: '5', posY: 140, mainScale: '0.75'  } : { posX: 15, posY: 134, mainScale: '1'  }
+                }
+                img = {ChickenWare}
+                imgwidth = {250}
+                imgHeight = {200}
+                githubLink={"https://github.com/urkkiz225/ChickenWare"}
+              WindowComponentProject/>
+            </div>
+            <img src={cat} alt='cat' className="cat"/>
+          <AppBarComponent />
+        </span>
     </ThemeProvider>
   );
 };

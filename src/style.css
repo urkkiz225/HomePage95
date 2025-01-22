@@ -70,6 +70,12 @@ body {
   transform: scale(2);
   width: 100px;
 }
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 
 .top-image {
   image-rendering:pixelated;

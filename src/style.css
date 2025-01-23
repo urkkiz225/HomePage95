@@ -112,3 +112,11 @@ body {
 .text-right {
   text-align: center;
 }
+.text-bottom {
+	float: left;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	text-align: center;
+	bottom: 0px;
+	width: 100%;
+}

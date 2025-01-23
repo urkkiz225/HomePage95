@@ -30,7 +30,6 @@ const PortfolioPage = () => {
     <ThemeProvider theme={redWine}>
       <span className="ms-sans-serif">
         <div style={{ paddingTop: '130px' }}>
-          <h1 style = {{color: 'white', transform: `scale(${1.1})`, textWrap:'pretty', textAlign: 'center', paddingLeft: '50px', paddingRight: '50px'}}>This is my portfolio page is for my code projects only! For other dabblings and witchcrafts - like art and music, refer to <a href="/gallery" style={{ color: 'red' }}>Gallery</a>.</h1>
             <WindowComponentProject
                 title = "Kesäsimulaattori"
                 content = "An ages old project, made in Unity 2020.1.1f1, HDRP utilized and C# typed all the way through. Contains light shaderwork in the mix, like compute gerstner wave shaders."
@@ -38,7 +37,7 @@ const PortfolioPage = () => {
                 width = {600}
                 height = {420}
                 {
-                  ...isMobile? {posX: '5', mainScale: '0.75' } : { posX: 14, posY: 8, mainScale: '1' }
+                  ...isMobile? {posX: '0', posY: '10'} : { posX: 14, posY: 8, mainScale: '1' }
                 }
                 img = {Kesasim}
                 imgwidth = {320}
@@ -52,7 +51,7 @@ const PortfolioPage = () => {
                 width = {525}
                 height = {380}
                 {
-                  ...isMobile? {posX: '5', posY: '90', mainScale: '0.75'} : { posX: 50, posY: 81, mainScale: '1'  }
+                  ...isMobile? {posX: '7', posY: '90'} : { posX: 50, posY: 81, mainScale: '1'  }
                 }
                 img = {Journey}
                 imgwidth = {320}
@@ -67,7 +66,7 @@ const PortfolioPage = () => {
                 width = {480}
                 height = {410}
                 {
-                  ...isMobile? {posX: '5', posY: 140, mainScale: '0.75'  } : { posX: 15, posY: 134, mainScale: '1'  }
+                  ...isMobile? {posX: '14', posY: '165'} : { posX: 15, posY: 134, mainScale: '1'  }
                 }
                 img = {ChickenWare}
                 imgwidth = {250}
@@ -77,6 +76,7 @@ const PortfolioPage = () => {
             </div>
             <img src={cat} alt='cat' className="cat"/>
           <AppBarComponent />
+          <h1 style = {{color: 'white', transform: `scale(${1.1})`, textWrap:'pretty', textAlign: 'center', paddingLeft: '50px', paddingRight: '50px'}}>This is my portfolio page is for my code projects only! For other dabblings and witchcrafts - like art and music, refer to <a href="/gallery" style={{ color: 'red' }}>Gallery</a>.</h1>
         </span>
     </ThemeProvider>
   );

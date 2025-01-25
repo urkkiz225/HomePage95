@@ -23,7 +23,7 @@ const WindowComponentProject = ({ title, content, contentSideLeft, contentSideRi
     const calculatePosition = () => {
       const newX = (window.innerWidth * posX) / 100;
       const newY = (window.innerHeight * posY) / 100;
-      setPosition((width+200)<window.innerWidth?{ x : (newX*(window.innerWidth / 1280)), y: newY}:{x:0, y : newY * Math.sqrt(window.innerWidth/(200+width))});
+      setPosition((width+200)<window.innerWidth?{ x : (window.innerWidth<2000?(newX*(window.innerWidth / 1280)):(550+newX*1280/(window.innerWidth))), y: newY*0.85}:{x:0, y : newY * Math.sqrt(window.innerWidth/(200+width))});
       console.log(mainScaleX);
     };
 
@@ -39,10 +39,6 @@ const WindowComponentProject = ({ title, content, contentSideLeft, contentSideRi
       const baseHeight = 720;
       const currentWidthScale = (window.innerWidth / baseWidth);
       const currentHeightScale = (window.innerHeight / baseHeight);
-      console.log(`scale: ${Math.min(currentWidthScale, currentHeightScale)}`);
-      console.log(`width: ${currentWidthScale}`);
-      console.log(`height: ${currentHeightScale}`);
-      console.log(window.innerWidth);
       setMainScaleX(currentWidthScale);
       setMainScaleY(currentHeightScale);
       setMainScale(Math.min(currentWidthScale, currentHeightScale));

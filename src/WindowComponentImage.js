@@ -23,7 +23,7 @@ const WindowComponentImage = ({ title, img, icon, width, height, imgWidth, imgHe
     const calculatePosition = () => {
       const newX = (window.innerWidth * posX) / 100;
       const newY = (window.innerHeight * posY) / 100;
-      setPosition((width+200)<window.innerWidth?{ x : (newX*(window.innerWidth / 1280)), y: newY}:{x:0, y : newY * Math.sqrt(window.innerWidth/(200+width))});
+      setPosition((width+200)<window.innerWidth?{ x : (window.innerWidth<2000?(newX*(window.innerWidth / 1280)):(500+newX*1280/(window.innerWidth))), y: newY*0.85}:{x:0, y : newY * Math.sqrt(window.innerWidth/(200+width))});
       console.log(mainScaleX);
     };
 

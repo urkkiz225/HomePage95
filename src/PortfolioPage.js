@@ -49,7 +49,7 @@ const PortfolioPage = () => {
         <div style={{ paddingTop: `${130*mainScale}px`}}>
             <WindowComponentProject
                 title = "Kesäsimulaattori"
-                content = "An ages old project, made in Unity 2020.1.1f1, HDRP utilized and C# typed all the way through. Contains light shaderwork in the mix, like compute gerstner wave shaders."
+                content = "An open world exploration game, made in Unity 2020.1.1f1, HDRP utilized and C# typed all the way through. Contains light shaderwork in the mix, like compute gerstner wave shaders."
                 contentSideRight = "A certified Finnish summer experience - down to the finite details. A passion project for a while - before the inevitablility of it all pushed towards new winds. Release on GitHub is outdated."
                 width = {600}
                 height = {420}
@@ -62,7 +62,7 @@ const PortfolioPage = () => {
               WindowComponentProject/>
               <WindowComponentProject
                 title = "Journey"
-                contentSideLeft = "An old horror game-esque high-fidelity audiovisual demo - key points are sound and environment design."
+                contentSideLeft = "An horror game-esque high-fidelity audiovisual demo - key points are sound and environment design."
                 content = "Made utilizing HDRP and the Unity game engine."
                 width = {525}
                 height = {380}
@@ -76,7 +76,7 @@ const PortfolioPage = () => {
               WindowComponentProject/>
               <WindowComponentProject
                 title = "ChickenWare"
-                content = "Written in Java, heavily utilizing the Minecraft source code. Programmed in 2020-2021."
+                content = "Written in Java, heavily utilizing the Minecraft source code."
                 contentSideRight = "A Minecraft base game utility client modification - allows for gamescapes otherwise entirely impossible."
                 width = {480}
                 height = {410}
@@ -89,8 +89,8 @@ const PortfolioPage = () => {
               WindowComponentProject/>
               <WindowComponentProject
                 title = "PolygxnUtils"
-                content = "A command-documented program that allows for the creation, manipulation and transformation of polygons - along with a lot of cool stuff slapped onto it."
-                contentSideLeft = "Written in Java for a computer scienec course - comes with a custom command line interface, and a graphicla user interface utulizing Java AWT."
+                content = "A command-documented program that allows for the creation, manipulation and transformation of polygons - along with layered functionality."
+                contentSideLeft = "Written in Java for a computer science course - comes with a custom command line interface, and a graphical user interface utulizing Java AWT."
                 width = {600}
                 height = {390}
                 posX={10}
@@ -110,12 +110,12 @@ const PortfolioPage = () => {
                 img = {HomePage95}
                 imgwidth = {416}
                 imgHeight = {234}
-                alternativeButtonText={"GitHrub"}
+                alternativeButtonText={"GitHub"}
                 githubLink={"https://github.com/urkkiz225/HomePage95"}
               WindowComponentProject/>
               <WindowComponentProject
-                title = "HomeworkExecuteaton-2000"
-                contentSideRight = "A custom parameter parser I made during the very first computer science course on the first year of high school. Written in Java."
+                title = "Custom function parameter parser"
+                contentSideRight = "A custom parameter parser voluntarily made for a computer science course. Written in Java."
                 content = "Allows for the execution of any of the given exercises in the course materials - with a custom command line interface. Utilizes the java.beans library for string to any datatype parsing."
                 width = {590}
                 height = {470}
@@ -130,11 +130,9 @@ const PortfolioPage = () => {
             {!isMobile ? (
               <div>
                 <img src={cat} style={{ position: 'absolute', bottom: `${-1670 * mainScale}px` }} alt='cat' className="cat" />
-                <h1 style = {{position:'relative', bottom:`${-2150*Math.sqrt(mainScale)}px`, minHeight: '10vh', color: 'white', transform: `scale(${1.1})`, textWrap:'pretty', textAlign: 'center', paddingLeft: '50px', paddingRight: '50px'}}>This is my portfolio page is for my code projects only! For other dabblings and witchcrafts - like art and music, refer to <a href="/gallery" style={{ color: 'red' }}>Gallery</a>.</h1>
               </div>
             ):(
               <div>
-                <h1 style = {{position:'relative', bottom:`${-2400*Math.sqrt(mainScale)}px`, minHeight: '15vh', color: 'white', transform: `scale(${1.1})`, textWrap:'pretty', textAlign: 'center', paddingLeft: `${50*Math.sqrt(mainScale)}px`, paddingRight:`${50*Math.sqrt(mainScale)}px`}}>This is my portfolio page is for my code projects only! For other dabblings and witchcrafts - like art and music, refer to <a href="/#/gallery" style={{ color: 'red' }}>Gallery</a>.</h1>
               </div>
             )}
           <AppBarComponent />

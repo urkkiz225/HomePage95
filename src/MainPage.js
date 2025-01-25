@@ -45,10 +45,10 @@ const MainPage = () => {
               <WindowComponentDescription
                 title = "About Me"
                 content = {`I am a programmer from Finland, greatly dabbling 
-                  in many areas upon the programmer space. My current projects and masteries especially include many, many years of game development in Unity and software development
-                   in Java. My other coding knowledge extends but isn't limited to Rust, Python, C++, JavaScript, CSS, HTML, Godot, UE5, ethical hacking and even a bit of Assembly - in thoughts here is said my grandiose love for everything computer related. I also know the ins and outs of teamwork, having been in multiple indie 
-                project teams along the years -and ad infinitum I always strive to learn more, for knowledge is power. Outside of programming I play the piano, make music, dabble in art and other creative work - that is, if the busy 
-                timetables derived from the ongoing last steps of high school and programming work allows such joys.`}
+                  in many areas upon the programmer space.  My current projects and masteries especially include many, many years of game development in Unity and software development
+                  in Java. My other coding knowledge extends but isn't limited to Rust, Python, C++, JavaScript, CSS, HTML, Godot, UE5, ethical hacking and even a bit of Assembly - in thoughts here is said my grandiose love for everything computer related. I also know the ins and outs of teamwork, having been in multiple indie 
+                  project teams along the years - and ad infinitum I always strive to learn more. My current interest is learning network engineering and web development. Outside of programming I play the piano, make music, dabble in art and other creative work - that is, if the busy 
+                  timetables derived from the ongoing last steps of high school and programming work allows such joys.`}
                 posX={12}
                 posY={7}
                 width={600}

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 import redWine from 'react95/dist/themes/redWine';
+import counterStrike from 'react95/dist/themes/counterStrike'
+import azureOrange from 'react95/dist/themes/azureOrange'
 import AppBarComponent from './AppBarComponent';
 import WindowComponentProject from './WindowComponentProject';
 import './style.css';
@@ -9,9 +11,12 @@ import Kesasim from './ProjectHeaders/Kesasim.png';
 import Journey from './ProjectHeaders/Journey.png';
 import ChickenWare from './ProjectHeaders/ChickenWare.png';
 import PolygxnUtils from './ProjectHeaders/PolygxnUtils.png';
+import HomePage95 from './ProjectHeaders/HomePage95.png';
+import ComScienceRepo from './ProjectHeaders/ComScienceRepo.png';
 
 const PortfolioPage = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const [mainScale, setMainScale] = useState(1);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -20,8 +25,19 @@ const PortfolioPage = () => {
       setIsMobile(isNarrowScreen || isMobileDevice);
     };
 
+    const calculateScale = () => {
+      const baseWidth = 1900;
+      const baseHeight = 1000;
+      const currentWidthScale = window.innerWidth / baseWidth;
+      const currentHeightScale = window.innerHeight / baseHeight;
+      const finalScale = 2*Math.min(currentWidthScale, currentHeightScale);
+      setMainScale(finalScale);
+    };
+
     checkMobile();
+    calculateScale();
     window.addEventListener('resize', checkMobile);
+    window.addEventListener('resize', calculateScale);
 
     return () => {
       window.removeEventListener('resize', checkMobile);
@@ -30,16 +46,15 @@ const PortfolioPage = () => {
   return (
     <ThemeProvider theme={redWine}>
       <span className="ms-sans-serif">
-        <div style={{ paddingTop: '130px' }}>
+        <div style={{ paddingTop: `${130*mainScale}px`}}>
             <WindowComponentProject
                 title = "Kesäsimulaattori"
                 content = "An ages old project, made in Unity 2020.1.1f1, HDRP utilized and C# typed all the way through. Contains light shaderwork in the mix, like compute gerstner wave shaders."
                 contentSideRight = "A certified Finnish summer experience - down to the finite details. A passion project for a while - before the inevitablility of it all pushed towards new winds. Release on GitHub is outdated."
                 width = {600}
                 height = {420}
-                {
-                  ...isMobile? {posX: '0', posY: '10'} : { posX: 14, posY: 8, mainScale: '1' }
-                }
+                posX={50}
+                posY={75}
                 img = {Kesasim}
                 imgwidth = {320}
                 imgHeight={180}
@@ -51,9 +66,8 @@ const PortfolioPage = () => {
                 content = "Made utilizing HDRP and the Unity game engine."
                 width = {525}
                 height = {380}
-                {
-                  ...isMobile? {posX: '7', posY: '90'} : { posX: 50, posY: 81, mainScale: '1'  }
-                }
+                posX={15}
+                posY={134}
                 img = {Journey}
                 imgwidth = {320}
                 imgHeight={180}
@@ -66,9 +80,8 @@ const PortfolioPage = () => {
                 contentSideRight = "A Minecraft base game utility client modification - allows for gamescapes otherwise entirely impossible."
                 width = {480}
                 height = {410}
-                {
-                  ...isMobile? {posX: '14', posY: '165'} : { posX: 15, posY: 134, mainScale: '1'  }
-                }
+                posX={55}
+                posY={195}
                 img = {ChickenWare}
                 imgwidth = {250}
                 imgHeight = {200}
@@ -80,17 +93,50 @@ const PortfolioPage = () => {
                 contentSideLeft = "Written in Java for a computer scienec course - comes with a custom command line interface, and a graphicla user interface utulizing Java AWT."
                 width = {600}
                 height = {390}
-                {
-                  ...isMobile? {posX: '14', posY: '205'} : { posX: '40', posY: '205', mainScale: '1'  }
-                }
+                posX={10}
+                posY={260}
                 img = {PolygxnUtils}
                 imgwidth = {320}
                 imgHeight = {180}
                 githubLink={"https://github.com/urkkiz225/PointPolygonUtils"}
               WindowComponentProject/>
+              <WindowComponentProject
+                title = "HomePage95"
+                content = "You are here."
+                width = {530}
+                height = {420}
+                posX={14}
+                posY={2}
+                img = {HomePage95}
+                imgwidth = {416}
+                imgHeight = {234}
+                alternativeButtonText={"GitHrub"}
+                githubLink={"https://github.com/urkkiz225/HomePage95"}
+              WindowComponentProject/>
+              <WindowComponentProject
+                title = "HomeworkExecuteaton-2000"
+                contentSideRight = "A custom parameter parser I made during the very first computer science course on the first year of high school. Written in Java."
+                content = "Allows for the execution of any of the given exercises in the course materials - with a custom command line interface. Utilizes the java.beans library for string to any datatype parsing."
+                width = {590}
+                height = {470}
+                posX={45}
+                posY={320}
+                img = {ComScienceRepo}
+                imgwidth = {416}
+                imgHeight = {234}
+                githubLink={"https://github.com/urkkiz225/COMscienceRepo"}
+              WindowComponentProject/>
             </div>
-          <img src = {cat} style = {{position:'absolute', bottom:'-1200px'}} alt='cat' className="cat"/>
-          <h1 style = {{position:'relative', bottom:'-1600px', minHeight: '10vh', color: 'white', transform: `scale(${1.1})`, textWrap:'pretty', textAlign: 'center', paddingLeft: '50px', paddingRight: '50px'}}>This is my portfolio page is for my code projects only! For other dabblings and witchcrafts - like art and music, refer to <a href="/gallery" style={{ color: 'red' }}>Gallery</a>.</h1>
+            {!isMobile ? (
+              <div>
+                <img src={cat} style={{ position: 'absolute', bottom: `${-1670 * mainScale}px` }} alt='cat' className="cat" />
+                <h1 style = {{position:'relative', bottom:`${-2150*Math.sqrt(mainScale)}px`, minHeight: '10vh', color: 'white', transform: `scale(${1.1})`, textWrap:'pretty', textAlign: 'center', paddingLeft: '50px', paddingRight: '50px'}}>This is my portfolio page is for my code projects only! For other dabblings and witchcrafts - like art and music, refer to <a href="/gallery" style={{ color: 'red' }}>Gallery</a>.</h1>
+              </div>
+            ):(
+              <div>
+                <h1 style = {{position:'relative', bottom:`${-2400*Math.sqrt(mainScale)}px`, minHeight: '15vh', color: 'white', transform: `scale(${1.1})`, textWrap:'pretty', textAlign: 'center', paddingLeft: `${50*Math.sqrt(mainScale)}px`, paddingRight:`${50*Math.sqrt(mainScale)}px`}}>This is my portfolio page is for my code projects only! For other dabblings and witchcrafts - like art and music, refer to <a href="/#/gallery" style={{ color: 'red' }}>Gallery</a>.</h1>
+              </div>
+            )}
           <AppBarComponent />
         </span>
     </ThemeProvider>

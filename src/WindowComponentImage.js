@@ -1,78 +1,93 @@
 import React, { useEffect, useState } from 'react';
 import Draggable from 'react-draggable';
 import { Window, WindowHeader, WindowContent, Button, Toolbar } from 'react95';
-import { Computer, Folder, Notepad, Camera as Eye, Close } from '@react95/icons';
+import {Computer} from '@react95/icons';
 
-const WindowComponentImage = ({ title, content, img, icon, width, height, imgWidth, imgHeight, imgScale, posX, posY }) => {
-  const [defaultPosition, setDefaultPosition] = useState({ x: posX, y: posY });
+const WindowComponentImage = ({ title, img, icon, width, height, imgWidth, imgHeight, imgScale, posX, posY }) => {
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [mainScaleX, setMainScaleX] = useState(1);
+  const [mainScaleY, setMainScaleY] = useState(1);
+  const [isMobile, setIsMobile] = useState(false);
+  const [useZeroPosition, setUseZeroPosition] = useState(true);
+  const [mainScale, setMainScale] = useState(1);
 
   useEffect(() => {
-    const handleResize = () => {
-      const newX = window.innerWidth < 800 ? window.innerWidth * 0.5 : defaultPosition.x;
-      const newY = window.innerHeight < 600 ? window.innerHeight * 0.5 : defaultPosition.y;
-      setDefaultPosition({ x: newX, y: newY });
+    const checkMobile = () => {
+      const isNarrowScreen = window.matchMedia('(max-width: 1000px)').matches;
+      const isMobileDevice = /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      setIsMobile(isNarrowScreen || isMobileDevice);
+    };
+    const checkIfUseZeroPosition = () => {
+      setUseZeroPosition((width+200) < window.innerWidth);
+    }
+    const calculatePosition = () => {
+      const newX = (window.innerWidth * posX) / 100;
+      const newY = (window.innerHeight * posY) / 100;
+      setPosition((width+200)<window.innerWidth?{ x : (newX*(window.innerWidth / 1280)), y: newY}:{x:0, y : newY * Math.sqrt(window.innerWidth/(200+width))});
+      console.log(mainScaleX);
     };
 
+    const handleResize = () => {
+      checkMobile();
+      calculateScale();
+      calculatePosition();
+      checkIfUseZeroPosition();
+    };
+
+    const calculateScale = () => {
+      const baseWidth = 1280;
+      const baseHeight = 720;
+      const currentWidthScale = (window.innerWidth / baseWidth);
+      const currentHeightScale = (window.innerHeight / baseHeight);
+      setMainScaleX(currentWidthScale);
+      setMainScaleY(currentHeightScale);
+      setMainScale(Math.min(currentWidthScale, currentHeightScale));
+    };
+
+    checkIfUseZeroPosition();
+    checkMobile();
+    calculatePosition();
+    calculateScale();
     window.addEventListener('resize', handleResize);
-    handleResize();
 
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, [defaultPosition.x, defaultPosition.y]);
+  }, [posX, posY]);
 
+  const handleDrag = (e, data) => {
+    setPosition({ x: data.x, y: data.y });
+    console.log(`pos: ${data.x}, ${data.y}`);
+  };
   return (
-    <Draggable handle=".window-header" defaultPosition={defaultPosition}>
-      <div>
-        <span className="ms-sans-serif">
-          <Window style={{ width: width, height: height, margin: 'auto', marginTop: 200 }}>
-            <WindowHeader className="window-header">
-                {icon ? (
-                  <img src={icon} alt="icon" className='img' style={{ marginRight: '8px', width: '16px', height: '16px'}} />
-                ) : (
-                  <Computer style={{ marginRight: '8px' }} />
-                )}
-                {title}
-              <Button style={{ float: 'right' }}>
-                <Close />
-              </Button>
-            </WindowHeader>
-            <Toolbar>
-              <Button variant="menu">
-                <Folder style={{ marginRight: '4px' }} />
-                File
-              </Button>
-              <Button variant="menu">
-                <Notepad style={{ marginRight: '4px' }} />
-                Edit
-              </Button>
-              <Button variant="menu">
-                <Eye style={{ marginRight: '4px' }} />
-                View
-              </Button>
-            </Toolbar>
-            <WindowContent style={{ display: 'flex', flexDirection: 'column', padding: '10px', overflow: 'hidden' }}>
-              <div style={{ flex: '1 1 auto', overflow: 'auto', width: '100%' }}>
-                <p>{content}</p>
-                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%' }}>
-                  <img
-                    src={img}
-                    alt="alt"
-                    style={{
-                      width: imgWidth,
-                      height: imgHeight,
-                      transform: `scale(${imgScale})`,
-                      display: 'block',
-                      margin: '10px 0'
-                    }}
-                  />
+    <span className="ms-sans-serif">
+      <Draggable position={position} disabled={isMobile} onDrag={handleDrag}>
+        <div>
+            <Window style={{ width: width, height: height, margin: '2px', display:'flex', flexDirection:'column', scrollbarColor: 'red', transformOrigin:'top', transform: `scale(${useZeroPosition ? 1.1 * Math.sqrt(mainScaleY) : window.innerWidth/(width+200)})`, position: 'absolute' }}>
+              <WindowHeader className="window-header">
+                  {title}
+              </WindowHeader>
+              <WindowContent style={{ overflow:'-moz-hidden-unscrollable' }}>
+                <div style={{width: '100%', height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+                  <div style={{ display: 'flex', justifyContent: 'center', flex: '1 1 auto', overflow: 'auto', alignItems: 'center', width: '95%', marginLeft: '2px', marginRight : '2px'}}>
+                    <img
+                      src={img}
+                      alt="alt"
+                      style={{
+                        width: imgWidth,
+                        height: imgHeight,
+                        transform: `scale(${imgScale})`,
+                        display: 'block',
+                        border: '2px solid white' 
+                      }}
+                    />
+                  </div>
                 </div>
-              </div>
-            </WindowContent>
-          </Window>
-        </span>
-      </div>
-    </Draggable>
+              </WindowContent>
+            </Window>
+        </div>
+      </Draggable>
+    </span>
   );
 };
 

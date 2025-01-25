@@ -65,7 +65,7 @@ const AppBarComponent = () => {
           </div>
           <div style={{ display: 'flex', alignItems: 'center' }}>
             {!isMobile && (
-              <img src={Header} alt="Header" className="top-image" ref={headerRef} style = {{transform:`scale(${2})`, marginBottom: '2px'}} />
+              <img src={Header} alt="Header" className="top-image" ref={headerRef} style = {{transform:`scale(${2})`, marginBottom: '2px'}} onClick={() => window.open('https://github.com/urkkiz225', '_blank')} />
             )}
             <div style = {{color:'white', marginRight: '13px', marginTop:'8px'}}>{!isMobile&&(`Check out my GitHub! →`) }</div>
             <button onClick={() => openLink('https://github.com/urkkiz225')} className="clear-button" style={{ marginRight: '15px', top: '50%'}}>

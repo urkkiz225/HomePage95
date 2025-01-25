@@ -1,5 +1,5 @@
 ## Home pages, portfolio, whatever. because why not.
-### Utilizes the [React95 library](https://github.com/React95/React95)
+### Utilizes the [React95 library](https://github.com/React95/React95).
 
 ```
   _                        

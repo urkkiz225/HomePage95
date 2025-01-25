@@ -1,20 +1,21 @@
 {
   "files": {
-    "main.css": "/HomePage95/static/css/main.cc76a4b1.css",
-    "main.js": "/HomePage95/static/js/main.1ffccb59.js",
+    "main.css": "/HomePage95/static/css/main.7b510cc2.css",
+    "main.js": "/HomePage95/static/js/main.c700f4d4.js",
     "static/js/453.d8d674dd.chunk.js": "/HomePage95/static/js/453.d8d674dd.chunk.js",
     "static/media/Kesasim.png": "/HomePage95/static/media/Kesasim.468315acf10e10162b15.png",
     "static/media/cat.png": "/HomePage95/static/media/cat.c7127d7026778f54cf0c.png",
     "static/media/Journey.png": "/HomePage95/static/media/Journey.decf41e634a2a6d0ac9a.png",
     "static/media/ChickenWare.png": "/HomePage95/static/media/ChickenWare.0aceb980a261b0be84ff.png",
+    "static/media/PolygxnUtils.png": "/HomePage95/static/media/PolygxnUtils.a0f6d8155fdce892afc3.png",
     "static/media/ms_sans_serif.woff": "/HomePage95/static/media/ms_sans_serif.aac84aa6de42b83d1a62.woff",
     "index.html": "/HomePage95/index.html",
-    "main.cc76a4b1.css.map": "/HomePage95/static/css/main.cc76a4b1.css.map",
-    "main.1ffccb59.js.map": "/HomePage95/static/js/main.1ffccb59.js.map",
+    "main.7b510cc2.css.map": "/HomePage95/static/css/main.7b510cc2.css.map",
+    "main.c700f4d4.js.map": "/HomePage95/static/js/main.c700f4d4.js.map",
     "453.d8d674dd.chunk.js.map": "/HomePage95/static/js/453.d8d674dd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.cc76a4b1.css",
-    "static/js/main.1ffccb59.js"
+    "static/css/main.7b510cc2.css",
+    "static/js/main.c700f4d4.js"
   ]
 }

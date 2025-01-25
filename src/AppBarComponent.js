@@ -22,7 +22,6 @@ const AppBarComponent = () => {
       window.removeEventListener('resize', checkMobile);
     };
   }, []);
-  const [hideHeader, setHideHeader] = useState(false);
   const headerRef = useRef(null);
   const navbarRef = useRef(null);
 
@@ -54,13 +53,13 @@ const AppBarComponent = () => {
               </div>
               )
             }
-            <Button variant="menu" size="sm" style={{ marginLeft: 4 }} onClick={() => redirectTo('/main')}>
+            <Button variant="default" size="sm" style={{ marginLeft: 5, marginRight: 2 }} onClick={() => redirectTo('/main')}>
               Main Page
             </Button>
-            <Button variant="menu" size="sm" style={{ marginLeft: 4 }} onClick={() => redirectTo('/portfolio')}>
+            <Button variant="default" size="sm" style={{ marginLeft: 5 }} onClick={() => redirectTo('/portfolio')}>
               Portfolio
             </Button>
-            <Button variant="menu" size="sm" style={{ marginLeft: 4 }} onClick={() => redirectTo('/gallery')}>
+            <Button variant="default" size="sm" style={{ marginLeft: 5 }} onClick={() => redirectTo('/gallery')}>
               Gallery
             </Button>
           </div>

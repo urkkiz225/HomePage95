@@ -8,6 +8,7 @@ import cat from './cat.png';
 import Kesasim from './ProjectHeaders/Kesasim.png';
 import Journey from './ProjectHeaders/Journey.png';
 import ChickenWare from './ProjectHeaders/ChickenWare.png';
+import PolygxnUtils from './ProjectHeaders/PolygxnUtils.png';
 
 const PortfolioPage = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -73,10 +74,24 @@ const PortfolioPage = () => {
                 imgHeight = {200}
                 githubLink={"https://github.com/urkkiz225/ChickenWare"}
               WindowComponentProject/>
+              <WindowComponentProject
+                title = "PolygxnUtils"
+                content = "A command-documented program that allows for the creation, manipulation and transformation of polygons - along with a lot of cool stuff slapped onto it."
+                contentSideLeft = "Written in Java for a computer scienec course - comes with a custom command line interface, and a graphicla user interface utulizing Java AWT."
+                width = {600}
+                height = {390}
+                {
+                  ...isMobile? {posX: '14', posY: '205'} : { posX: '40', posY: '205', mainScale: '1'  }
+                }
+                img = {PolygxnUtils}
+                imgwidth = {320}
+                imgHeight = {180}
+                githubLink={"https://github.com/urkkiz225/PointPolygonUtils"}
+              WindowComponentProject/>
             </div>
-            <img src={cat} alt='cat' className="cat"/>
+          <img src = {cat} style = {{position:'absolute', bottom:'-1200px'}} alt='cat' className="cat"/>
+          <h1 style = {{position:'relative', bottom:'-1600px', minHeight: '10vh', color: 'white', transform: `scale(${1.1})`, textWrap:'pretty', textAlign: 'center', paddingLeft: '50px', paddingRight: '50px'}}>This is my portfolio page is for my code projects only! For other dabblings and witchcrafts - like art and music, refer to <a href="/gallery" style={{ color: 'red' }}>Gallery</a>.</h1>
           <AppBarComponent />
-          <h1 style = {{color: 'white', transform: `scale(${1.1})`, textWrap:'pretty', textAlign: 'center', paddingLeft: '50px', paddingRight: '50px'}}>This is my portfolio page is for my code projects only! For other dabblings and witchcrafts - like art and music, refer to <a href="/gallery" style={{ color: 'red' }}>Gallery</a>.</h1>
         </span>
     </ThemeProvider>
   );

@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/HomePage95/static/css/main.7b510cc2.css",
-    "main.js": "/HomePage95/static/js/main.4010b26b.js",
+    "main.js": "/HomePage95/static/js/main.c8f7c925.js",
     "static/js/453.d8d674dd.chunk.js": "/HomePage95/static/js/453.d8d674dd.chunk.js",
     "static/media/Kesasim.png": "/HomePage95/static/media/Kesasim.468315acf10e10162b15.png",
     "static/media/cat.png": "/HomePage95/static/media/cat.c7127d7026778f54cf0c.png",
@@ -11,14 +11,15 @@
     "static/media/PolygxnUtils.png": "/HomePage95/static/media/PolygxnUtils.a0f6d8155fdce892afc3.png",
     "static/media/ComScienceRepo.png": "/HomePage95/static/media/ComScienceRepo.5503b43980f7f07afe66.png",
     "static/media/urkkiz.jpg": "/HomePage95/static/media/urkkiz.db06ff144aee660f5c71.jpg",
+    "static/media/WhoIsItQuestionMark.png": "/HomePage95/static/media/WhoIsItQuestionMark.907d3f681e6296fb6b52.png",
     "static/media/ms_sans_serif.woff": "/HomePage95/static/media/ms_sans_serif.aac84aa6de42b83d1a62.woff",
     "index.html": "/HomePage95/index.html",
     "main.7b510cc2.css.map": "/HomePage95/static/css/main.7b510cc2.css.map",
-    "main.4010b26b.js.map": "/HomePage95/static/js/main.4010b26b.js.map",
+    "main.c8f7c925.js.map": "/HomePage95/static/js/main.c8f7c925.js.map",
     "453.d8d674dd.chunk.js.map": "/HomePage95/static/js/453.d8d674dd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7b510cc2.css",
-    "static/js/main.4010b26b.js"
+    "static/js/main.c8f7c925.js"
   ]
 }

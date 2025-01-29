@@ -13,7 +13,7 @@ const WindowComponentImage = ({ title, img, icon, width, height, imgWidth, imgHe
 
   useEffect(() => {
     const checkMobile = () => {
-      const isNarrowScreen = window.matchMedia('(max-width: 1000px)').matches;
+      const isNarrowScreen = false; //fix or remove later.
       const isMobileDevice = /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
       setIsMobile(isNarrowScreen || isMobileDevice);
     };

@@ -13,7 +13,7 @@ const WindowComponentDescription = ({ title, content, icon, width, height, posX,
 
   useEffect(() => {
     const checkMobile = () => {
-      const isNarrowScreen = window.matchMedia('(max-width: 1000px)').matches;
+      const isNarrowScreen = false; //fix later
       const isMobileDevice = /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
       setIsMobile(isNarrowScreen || isMobileDevice);
     };
@@ -61,7 +61,6 @@ const WindowComponentDescription = ({ title, content, icon, width, height, posX,
   };
 
   return (
-    <span className="ms-sans-serif">
       <Draggable position={position} disabled={isMobile} onDrag={handleDrag}>
         <div>
             <Window style={{ width: width, height: height, margintop:'75', display:'flex', flexDirection:'column', scrollbarColor: 'red', transformOrigin:'top-left', transform: `scale(${useZeroPosition ? 1.1 * Math.sqrt(mainScaleY) : window.innerWidth/(width+200)})`, position: 'absolute' }}>
@@ -81,7 +80,6 @@ const WindowComponentDescription = ({ title, content, icon, width, height, posX,
             </Window>
         </div>
       </Draggable>
-    </span>
   );
 };
 

@@ -1,4 +1,4 @@
-## Home pages, portfolio, whatever. because why not :3
+## Home pages, portfolio, whatever. Go my scarab
 ### Utilizes the [React95 library](https://github.com/React95/React95).
 
 ```

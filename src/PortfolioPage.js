@@ -48,7 +48,7 @@ const PortfolioPage = () => {
     <ThemeProvider theme={redWine}>
       <span className="ms-sans-serif">
         <div style={{ paddingTop: `165px`}}>
-        <h1 style = {{position:'relative', top: '-30px', minHeight: '3vh', color: 'white', transform: `scale(${1.1})`, textWrap:'pretty', textAlign: 'center', paddingLeft: '50px', paddingRight: '50px'}}>The windows are draggable! An <a href="/supersecretlink#/main" style={{ color: 'orange' }}>about me</a> can be found on the <a href="/supersecretlink#/main" style={{ color: 'red' }}>Main page.</a>.</h1>
+        <h1 style = {{position:'relative', top: '-30px', minHeight: '3vh', color: 'white', transform: `scale(${1.1})`, textWrap:'pretty', textAlign: 'center', paddingLeft: '50px', paddingRight: '50px'}}>The windows are draggable! An <a href="/#/main" style={{ color: 'orange' }}>about me</a> can be found on the <a href="/#/main" style={{ color: 'red' }}>Main page.</a>. Furthermore, this page only shows <a style = {{color: "purple"}}>7</a> of my <a style = {{color: "pink"}}>26</a> GitHub <a href="https://github.com/urkkiz225?tab=repositories" style={{ color: 'red' }}>project repositories,</a> of which <a style = {{color: "magenta"}}>16</a> are private / privately archived.</h1>
             <WindowComponentProject
                 title = "Kesäsimulaattori"
                 content = "An open world exploration gam4e, made in Unity 2020.1.1f1, HDRP utilized and C# typed all the way through. Contains light shaderwork in the mix, like compute gerstner wave shaders."
@@ -65,7 +65,7 @@ const PortfolioPage = () => {
               <WindowComponentProject
                 title = "Unnamed secretive project"
                 content = "By a great magnitude my biggest project yet - with around 400 work hours and 9000+ lines of code, it's a game that's been helped by the joint group effort of a team. Project started in February 2024, and has proved me many, many valuable things."
-                contentSideRight = "A unity top down open world and rpg game in pixel art style - hundreds of visual studio hours in development. Coded mainly in C# and utilizes countless libries and systems built from the ground up - like fully custom JSON dialogue and game event parsing - with a custom web fetch protocol, if you want to."
+                contentSideRight = "A unity top down open world and rpg game in pixel art style - hundreds of visual studio hours in development. Coded mainly in C# and utilizes countless libries and systems built from the ground up - like fully custom JSON dialogue and game event parsing - with a custom web fetch protocol, for example."
                 width = {650}
                 height = {480}
                 posX={50}

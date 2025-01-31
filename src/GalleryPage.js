@@ -10,7 +10,7 @@ const GalleryPage = () => {
       <span className="ms-sans-serif">
         <AppBarComponent />
         <div style={{ paddingTop: '130px' }}>
-          <h1 style = {{color:'white'}}>There doesn't seem to be anything here yet...</h1>
+          <h1 style={{ position: 'relative', top: '0px', minHeight: '3vh', color: 'white', transform: `scale(${1.1})`, textWrap: 'pretty', textAlign: 'center', paddingLeft: '50px', paddingRight: '50px' }}>An evil <a href="/HomePage95/#/main" style={{ color: 'red' }}>gnome</a> seems to have eaten all the content on this page.</h1>
           <img src={cat} alt='cat' className="center-image" />
         </div>
       </span>

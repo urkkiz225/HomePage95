@@ -57,7 +57,7 @@ const MainPage = () => {
             githubLink={'https://github.com/urkkiz225'}
             WindowComponentProject />
           <span className='ms-sans-serif'>
-            <h1 style={{ position: 'relative', top: '-30px', minHeight: '3vh', color: 'white', transform: `scale(${1.1})`, textWrap: 'pretty', textAlign: 'center', paddingLeft: '50px', paddingRight: '50px' }}>The windows are draggable! Be sure to also check out my <a href="/#/portfolio" style={{ color: 'red' }}>portfolio.</a>. My LinkedIn is <a href="https://www.linkedin.com/in/urho-saari-9972ba26a/" style={{ color: 'magenta' }}>here.</a>. </h1>
+            <h1 style={{ position: 'relative', top: '-30px', minHeight: '3vh', color: 'white', transform: `scale(${1.1})`, textWrap: 'pretty', textAlign: 'center', paddingLeft: '50px', paddingRight: '50px' }}>The windows are draggable! Be sure to also check out my <a href="/HomePage95/#/portfolio" style={{ color: 'red' }}>portfolio.</a>. My LinkedIn is <a href="https://www.linkedin.com/in/urho-saari-9972ba26a/" style={{ color: 'magenta' }}>here.</a>. </h1>
 
             <WindowComponentImage
               title="..."

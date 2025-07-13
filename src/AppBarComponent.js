@@ -4,17 +4,14 @@ import GitHubLogo256x256 from './GH-logo256x256.png';
 import { AppBar, Toolbar, Button, TextInput } from 'react95';
 import { useNavigate } from 'react-router-dom';
 
-
 const AppBarComponent = () => {
   const [isMobile, setIsMobile] = useState(false);
-
   useEffect(() => {
     const checkMobile = () => {
       const isNarrowScreen = window.matchMedia('(max-width: 1000px)').matches;
       const isMobileDevice = /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
       setIsMobile(isNarrowScreen || isMobileDevice);
     };
-
     checkMobile();
     window.addEventListener('resize', checkMobile);
 
@@ -34,16 +31,6 @@ const AppBarComponent = () => {
   const redirectTo = (path) => {
     navigate(path);
   };
-  const [searchValue, setSearchValue] = useState('');
-  const handleSearchChange = (e) => {
-    setSearchValue(e.target.value);
-  };
-  const handleSearch = (e) => {
-    //shitty stackoverflow solution which also doesn't work
-    if (e.key === 'Enter') {
-      redirectTo(`/search?q=${encodeURIComponent(searchValue)}`);
-    }
-  };
   return (
     <AppBar style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 100 }}>
       <span className="ms-sans-serif">
@@ -58,9 +45,6 @@ const AppBarComponent = () => {
                 placeholder="Search..."
                 width={150}
                 style={{ marginLeft: 4 }}
-                value={searchValue}
-                onChange={handleSearchChange}
-                onKeyDown={handleSearch}
               />
               </div>
               )

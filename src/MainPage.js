@@ -45,8 +45,8 @@ const MainPage = () => {
           <WindowComponentProject
             title="About Me"
             content={`I am a programmer from Finland, greatly dabbling 
-                  in many areas upon the programmer space.  My current projects and masteries especially include many, many years of game development in Unity and software development
-                  in Java. My other coding knowledge extends but isn't limited to Rust, Python, C++, JavaScript, CSS, HTML, Godot, UE5, ethical hacking and even a bit of Assembly - in thoughts here is said my grandiose love for everything computer related. I also know the ins and outs of teamwork, having been in and lead multiple indie game and software
+                  in many areas upon the programmer space. Studying in Aalto university (Informaatioverkostot) 2025 ->. My current projects and masteries especially include many, many years of game development in Unity and software development
+                  in Java. My other coding knowledge extends but isn't limited to Python, C++, JavaScript, CSS, HTML, Godot, UE5, ethical hacking and even a bit of Assembly - in thoughts here is said my grandiose love for everything computer related. I also know the ins and outs of teamwork, having been in and lead multiple indie game and software
                   project teams along the years - for ad infinitum I always strive to learn more. My current interest is learning network engineering and web development. Outside of programming I play the piano, make music, dabble in art and other creative work - that is, if the busy 
                   timetables derived from the ongoing last steps of high school and programming work allows such joys.`}
             posX={12}
@@ -57,8 +57,7 @@ const MainPage = () => {
             githubLink={'https://github.com/urkkiz225'}
             WindowComponentProject />
           <span className='ms-sans-serif'>
-            <h1 style={{ position: 'relative', top: '-30px', minHeight: '3vh', color: 'white', transform: `scale(${1.1})`, textWrap: 'pretty', textAlign: 'center', paddingLeft: '50px', paddingRight: '50px' }}>The windows are draggable! Be sure to also check out my <a href="/HomePage95/#/portfolio" style={{ color: 'red' }}>portfolio.</a>. My LinkedIn is <a href="https://www.linkedin.com/in/urho-saari-9972ba26a/" style={{ color: 'magenta' }}>here.</a>. </h1>
-
+            <h1 style={{ position: 'relative', top: '-30px', minHeight: '3vh', color: 'white', transform: `scale(${1.1})`, textWrap: 'pretty', textAlign: 'center', paddingLeft: '50px', paddingRight: '50px' }}>The windows are draggable! Be sure to also check out my <a href="/HomePage95/#/portfolio" style={{ color: 'red' }}>portfolio.</a>. My LinkedIn is <a href="https://www.linkedin.com/in/urho-saari-9972ba26a/" style={{ color: 'magenta' }}>here.</a>{isMobile && (" also there are some problems on mobile right now...")}</h1>
             <WindowComponentImage
               title="..."
               img={urkkiz}

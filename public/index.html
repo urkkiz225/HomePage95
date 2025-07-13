@@ -30,23 +30,24 @@
     <noscript>You need to enable JavaScript to run this app. Bawoo! (my catchphrase)</noscript>
     <div id="root"></div>
     <div id="app"></div>
-    <!--
     <script src="https://unpkg.com/webamp"></script>
     <script>
         const app = document.getElementById("app")
         const webamp = new Webamp();
+        initialTracks: [
+          {
+            metaData: {
+              artist: "urkkiz",
+              title: "metal12",
+            },
+            // NOTE: Your audio file must be served from the same domain as your HTML
+            // file, or served with permissive CORS HTTP headers:
+            // https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
+            url: "https://cdn.discordapp.com/attachments/867887578149683241/1376315151547891712/metal12.wav?ex=683783de&is=6836325e&hm=4b35c34e07df77aa1fdecc1d4d359fd2bfc70c2fd078cd2456de6e58e0507ff7&",
+            duration: 5.322286,
+          }
+        ]
         webamp.renderWhenReady(app);
     </script>
-    -->
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
   </body>
 </html>

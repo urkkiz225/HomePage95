@@ -34,7 +34,16 @@ const AppBarComponent = () => {
   const redirectTo = (path) => {
     navigate(path);
   };
-
+  const [searchValue, setSearchValue] = useState('');
+  const handleSearchChange = (e) => {
+    setSearchValue(e.target.value);
+  };
+  const handleSearch = (e) => {
+    //shitty stackoverflow solution which also doesn't work
+    if (e.key === 'Enter') {
+      redirectTo(`/search?q=${encodeURIComponent(searchValue)}`);
+    }
+  };
   return (
     <AppBar style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 100 }}>
       <span className="ms-sans-serif">
@@ -48,7 +57,10 @@ const AppBarComponent = () => {
               <TextInput
                 placeholder="Search..."
                 width={150}
-                style={{ marginLeft: 4}}
+                style={{ marginLeft: 4 }}
+                value={searchValue}
+                onChange={handleSearchChange}
+                onKeyDown={handleSearch}
               />
               </div>
               )

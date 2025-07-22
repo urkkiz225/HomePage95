@@ -16,15 +16,19 @@ import ComScienceRepo from './ProjectHeaders/ComScienceRepo.png';
 import WhoIsIt from './ProjectHeaders/WhoIsItQuestionMark.png';
 
 const PortfolioPage = () => {
-  const [isMobile, setIsMobile] = useState(false);
-  const [mainScale, setMainScale] = useState(1);
-
-  useEffect(() => {
-    const checkMobile = () => {
-      const isNarrowScreen = window.matchMedia('(max-width: 1000px)').matches;
-      const isMobileDevice = /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-      setIsMobile(isNarrowScreen || isMobileDevice);
-    };
+    const [isMobile, setIsMobile] = useState(false);
+    const [isNarrowScreen, setIsNarrowScreen] = useState(false);
+    const [isMobileDevice, setIsMobileDevice] = useState(false);
+    const [mainScale, setMainScale] = useState(1);
+  
+    useEffect(() => {
+      const checkMobile = () => {
+        const narrow = window.matchMedia('(max-width: 1000px)').matches;
+        const mobile = /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        setIsNarrowScreen(narrow);
+        setIsMobileDevice(mobile);
+        setIsMobile(narrow || mobile);
+      };
 
     const calculateScale = () => {
       const baseWidth = 1280;
@@ -48,10 +52,10 @@ const PortfolioPage = () => {
     <ThemeProvider theme={redWine}>
       <span className="ms-sans-serif">
         <div style={{ paddingTop: `165px`}}>
-        <h1 style = {{position:'relative', top: '-30px', minHeight: '3vh', color: 'white', transform: `scale(${1.1})`, textWrap:'pretty', textAlign: 'center', paddingLeft: '50px', paddingRight: '50px'}}>The windows are draggable! An <a href="/HomePage95/#/main" style={{ color: 'orange' }}>about me</a> can be found on the <a href="/HomePage95/#/main" style={{ color: 'red' }}>Main page.</a>. Furthermore, this page only shows <a style = {{color: "purple"}}>7</a> of my <a style = {{color: "pink"}}>26</a> GitHub <a href="https://github.com/urkkiz225?tab=repositories" style={{ color: 'red' }}>project repositories,</a> of which <a style = {{color: "magenta"}}>16</a> are private / privately archived. {isMobile && ("also there are some problems on mobile right now...")}</h1>
+        <h1 style = {{position:'relative', top: '-30px', minHeight: '3vh', color: 'white', transform: `scale(${1.1})`, textWrap:'pretty', textAlign: 'center', paddingLeft: '50px', paddingRight: '50px'}}>The windows are draggable! An <a href="/HomePage95/#/main" style={{ color: 'orange' }}>about me</a> can be found on the <a href="/HomePage95/#/main" style={{ color: 'red' }}>Main page.</a>. Furthermore, this page only shows <a style = {{color: "purple"}}>7</a> of my <a style = {{color: "pink"}}>26</a> GitHub <a href="https://github.com/urkkiz225?tab=repositories" style={{ color: 'red' }}>project repositories,</a> of which <a style = {{color: "magenta"}}>16</a> are private / privately archived. {isMobileDevice && ("(also there are some problems on mobile right now...)")}</h1>
             <WindowComponentProject
                 title = "Kesäsimulaattori"
-                content = "An open world exploration gam4e, made in Unity 2020.1.1f1, HDRP utilized and C# typed all the way through. Contains light shaderwork in the mix, like compute gerstner wave shaders."
+                content = "An open world exploration game, made in Unity 2020.1.1f1, HDRP utilized and C# typed all the way through. Contains light shaderwork in the mix, like compute gerstner wave shaders."
                 contentSideRight = "A certified Finnish summer experience - down to the finite details. A passion project for a while - before the inevitablility of it all pushed towards new winds. Release on GitHub is outdated."
                 width = {600}
                 height = {420}

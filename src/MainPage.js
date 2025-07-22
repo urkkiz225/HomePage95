@@ -10,13 +10,17 @@ import WindowComponentProject from './WindowComponentProject';
 
 const MainPage = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const [isNarrowScreen, setIsNarrowScreen] = useState(false);
+  const [isMobileDevice, setIsMobileDevice] = useState(false);
   const [mainScale, setMainScale] = useState(1);
 
   useEffect(() => {
     const checkMobile = () => {
-      const isNarrowScreen = window.matchMedia('(max-width: 1000px)').matches;
-      const isMobileDevice = /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-      setIsMobile(isNarrowScreen || isMobileDevice);
+      const narrow = window.matchMedia('(max-width: 1000px)').matches;
+      const mobile = /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      setIsNarrowScreen(narrow);
+      setIsMobileDevice(mobile);
+      setIsMobile(narrow || mobile);
     };
 
     const calculateScale = () => {
@@ -55,7 +59,7 @@ const MainPage = () => {
             githubLink={'https://github.com/urkkiz225'}
             WindowComponentProject />
           <span className='ms-sans-serif'>
-            <h1 style={{ position: 'relative', top: '-30px', minHeight: '3vh', color: 'white', transform: `scale(${1.1})`, textWrap: 'pretty', textAlign: 'center', paddingLeft: '50px', paddingRight: '50px' }}>The windows are draggable! Be sure to also check out my <a href="/HomePage95/#/portfolio" style={{ color: 'red' }}>portfolio.</a>. My LinkedIn is <a href="https://www.linkedin.com/in/urho-saari-9972ba26a/" style={{ color: 'magenta' }}>here.</a>{isMobile && (" also there are some problems on mobile right now...")}</h1>
+            <h1 style={{ position: 'relative', top: '-30px', minHeight: '3vh', color: 'white', transform: `scale(${1.1})`, textWrap: 'pretty', textAlign: 'center', paddingLeft: '50px', paddingRight: '50px' }}>The windows are draggable! Be sure to also check out my <a href="/HomePage95/#/portfolio" style={{ color: 'red' }}>portfolio.</a>. My LinkedIn is <a href="https://www.linkedin.com/in/urho-saari-9972ba26a/" style={{ color: 'magenta' }}>here.</a>{isMobileDevice && ( " (also there are some problems on mobile right now...)")}</h1>
             <WindowComponentImage
               title="..."
               img={urkkiz}

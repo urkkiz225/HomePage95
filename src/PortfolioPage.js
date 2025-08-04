@@ -56,7 +56,7 @@ const PortfolioPage = () => {
             <WindowComponentProject
                 title = "Kesäsimulaattori"
                 content = "An open world exploration game, made in Unity 2020.1.1f1, HDRP utilized and C# typed all the way through. Contains light shaderwork in the mix, like compute gerstner wave shaders."
-                contentSideRight = "A certified Finnish summer experience - down to the finite details. A passion project for a while - before the inevitablility of it all pushed towards new winds. Release on GitHub is outdated."
+                contentSideRight = "A classic Finnish summer experience - down to the finite details. A passion project for a while - before the inevitablility of it all pushed towards new winds. Release on GitHub is outdated."
                 width = {600}
                 height = {420}
                 posX={15}
